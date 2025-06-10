@@ -15,22 +15,24 @@ export class NewTaskComponent {
 
   addTask() {
 
-    //verificação espaços ou brancos.
-    const title = this.newTaskTitle.trim();
-    
-    if (!title) {
-    this.showError = true;
-    return;
+    if(!this.newTaskTitle.trim()) {
+      this.showError = true;
+      return;
     }
     
-    const newTodo: Todo = {
-    id: this.todoService.getTodoNewId(),
-    title,
-    completed: false
-    };
-    
-    this.todoService.addTodo(newTodo);
+    const titles = this.newTaskTitle.split('|');
+
+    titles.forEach(title => {
+      const cleanTitle = title.trim();
+      if(cleanTitle){
+        const newTodo: Todo = {
+        id: this.todoService.getTodoNewId(),
+        title: cleanTitle,
+        completed: false
+       };
+       this.todoService.addTodo(newTodo);
+      }
+    });
     this.newTaskTitle = '';
-    this.showError = false; 
   }
 }
