@@ -41,6 +41,10 @@
   cursor: pointer;
 }
 
+.todo-item-button {
+  display: flex;
+  gap: 1rem;
+}
 
 .fa-trash-alt:hover {
   color: rgba(65, 63, 63, 0.62);
