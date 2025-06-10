@@ -28,24 +28,48 @@
 }
 
 .todo-item_edit{
+  width: 10px;
   color: blue;
-  width: 10px;
-  width: fit-content;
-}
-.todo-item_delete {
-  width: 10px;
-  width: fit-content;
-  color: red;
+  border: solid 1px rgba(0, 0, 255, 0.419);
   background: none;
-  border: none;
   cursor: pointer;
+  padding: 0.3rem 0.6rem;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  border-radius: 4px;
+  width: fit-content;
 }
 
-.todo-item-button {
+.todo-item_edit:hover {
+  background-color: rgba(53, 71, 229, 0.1);
+  color: #211cb7;
+}
+
+.todo-item_delete {
+  color: #e53935;
+  background: none;
+  border: solid 1px rgba(255, 0, 0, 0.419);
+  cursor: pointer;
+  padding: 0.3rem 0.6rem;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  border-radius: 4px;
+}
+
+.todo-item_delete:hover {
+  background-color: rgba(229, 57, 53, 0.1);
+  color: #b71c1c;
+}
+
+.todo-item_button {
   display: flex;
   gap: 1rem;
 }
 
 .fa-trash-alt:hover {
-  color: rgba(65, 63, 63, 0.62);
+  color: #b71c1c;
 }
