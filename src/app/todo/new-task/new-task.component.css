@@ -42,3 +42,8 @@
   margin-bottom: 0.2rem;
   padding: 0.2rem 0.55rem;
 }
+
+.error {
+  color: #e53935;
+  text-align: center;
+}

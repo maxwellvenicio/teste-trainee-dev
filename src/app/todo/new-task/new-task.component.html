@@ -1,5 +1,8 @@
 <div class="new-task">
   <div class="new-task_input-container">
+    <div *ngIf="showProfanityError" class="error">
+      Não é permitido cadastrar tarefas com palavras obscenas.
+    </div>
     <label class="new-task_label" for="new-task">Título da Tarefa</label>
     <input
       id="new-task"
