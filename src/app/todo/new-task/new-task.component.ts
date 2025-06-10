@@ -9,17 +9,28 @@ import { TodoService } from '../../shared/services/todo.service';
 })
 export class NewTaskComponent {
   newTaskTitle: string = '';
+  showError: boolean = false;
 
   constructor(private todoService: TodoService) { }
 
   addTask() {
-    const newTodo: Todo = {
-      id: this.todoService.getTodoNewId(),
-      title: this.newTaskTitle,
-      completed: false
-    };
 
+    //verificação espaços ou brancos.
+    const title = this.newTaskTitle.trim();
+    
+    if (!title) {
+    this.showError = true;
+    return;
+    }
+    
+    const newTodo: Todo = {
+    id: this.todoService.getTodoNewId(),
+    title,
+    completed: false
+    };
+    
     this.todoService.addTodo(newTodo);
     this.newTaskTitle = '';
+    this.showError = false; 
   }
 }
